@@ -12,6 +12,11 @@ function install_check () {
 install_check python
 install_check go
 install_check curl
+install_check git
+
+git config --global alias.st status
+git config --global alias.ci commit
+
 
 set -x
 cd $(dirname $0)
@@ -21,7 +26,7 @@ if [[ -f ~/.screenrc && ! -f ~/.screenrc.back ]]; then
     mv ~/.screenrc ~/.screenrc.back
 fi
 
-cp screenrc ~/.screenrc
+ln -s ${PWD}/screenrc ~/.screenrc
 
 
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
