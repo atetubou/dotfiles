@@ -9,6 +9,7 @@ function install_check () {
     fi
 }
 
+install_check python
 install_check go
 install_check curl
 
@@ -24,7 +25,12 @@ cp screenrc ~/.screenrc
 
 
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+# goimports
+go get golang.org/x/tools/cmd/goimports
+
 echo 'export PATH="~/.cask/bin:$PATH"' >> ~/.bashrc
+echo 'export GOPATH="~/.go"' >> ~/.bashrc
+echo 'export PATH="$GOPATH/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 
 if [[ ! -L ~/.emacs.d && ! -e ~/.emacs.d.back ]]; then
@@ -39,8 +45,3 @@ $(
     cd ~/.emacs.d
     cask install
 )
-
-# goimports
-echo 'export GOPATH="~/.go"' >> ~/.bashrc
-echo 'export PATH="$GOPATH/bin:$PATH"' >> ~/.bashrc
-go get golang.org/x/tools/cmd/goimports
