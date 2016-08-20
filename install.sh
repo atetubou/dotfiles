@@ -1,5 +1,6 @@
 #!/bin/bash
-
+set -x
+cd $(dirname $0)
 
 function install_check () {
     package=$1
@@ -18,9 +19,8 @@ git config --global alias.st status
 git config --global alias.ci commit
 git config --global user.name ${USER}
 git config --global user.email ${USER}@${HOSTNAME}
+git config --global push.default matching
 
-set -x
-cd $(dirname $0)
 
 
 if [[ -f ~/.screenrc && ! -f ~/.screenrc.back ]]; then
