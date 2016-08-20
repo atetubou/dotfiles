@@ -16,7 +16,8 @@ install_check git
 
 git config --global alias.st status
 git config --global alias.ci commit
-
+git config --global user.name ${USER}
+git config --global user.email ${USER}@${HOSTNAME}
 
 set -x
 cd $(dirname $0)
