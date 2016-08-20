@@ -1,0 +1,9 @@
+hardstatus alwayslastline '%{= kw}%02c:%s %{= .y}%H %L=%{= .b}%-w%46>%{= .r}%n %t*%{= .b}%+w%-16=%{= .y}[%l]'
+escape ^z^z
+defflow off
+startup_message off
+autodetach on
+vbell off
+
+defencoding utf8
+encoding utf8 utf8
