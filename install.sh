@@ -37,7 +37,7 @@ go get golang.org/x/tools/cmd/goimports
 echo 'export PATH="~/.cask/bin:$PATH"' >> ~/.bashrc
 echo 'export GOPATH="~/.go"' >> ~/.bashrc
 echo 'export PATH="$GOPATH/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+. ~/.bashrc
 
 if [[ ! -L ~/.emacs.d && ! -e ~/.emacs.d.back ]]; then
     mv ~/.emacs.d ~/.emacs.d.back
