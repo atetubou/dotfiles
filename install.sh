@@ -31,13 +31,13 @@ ln -s ${PWD}/screenrc ~/.screenrc
 
 
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
-# goimports
-go get golang.org/x/tools/cmd/goimports
 
 echo 'export PATH="~/.cask/bin:$PATH"' >> ~/.bashrc
 echo 'export GOPATH="~/.go"' >> ~/.bashrc
 echo 'export PATH="$GOPATH/bin:$PATH"' >> ~/.bashrc
 . ~/.bashrc
+# goimports
+go get golang.org/x/tools/cmd/goimports
 
 if [[ ! -L ~/.emacs.d && ! -e ~/.emacs.d.back ]]; then
     mv ~/.emacs.d ~/.emacs.d.back
