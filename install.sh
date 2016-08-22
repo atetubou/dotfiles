@@ -32,8 +32,8 @@ ln -s ${PWD}/screenrc ~/.screenrc
 
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 
-echo 'export PATH="~/.cask/bin:$PATH"' >> ~/.bashrc
-echo 'export GOPATH="~/.go"' >> ~/.bashrc
+echo 'export PATH="${HOME}/.cask/bin:$PATH"' >> ~/.bashrc
+echo 'export GOPATH="${HOME}/.go"' >> ~/.bashrc
 echo 'export PATH="$GOPATH/bin:$PATH"' >> ~/.bashrc
 . ~/.bashrc
 # goimports
