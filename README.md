@@ -1,6 +1,7 @@
 # dotfiles
 
 ## Prerequire:
+ - emacs
  - python
  - go
  - curl
