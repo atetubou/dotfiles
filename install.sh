@@ -14,6 +14,7 @@ install_check python
 install_check go
 install_check curl
 install_check git
+install_check emacs
 
 git config --global alias.st status
 git config --global alias.ci commit
