@@ -9,7 +9,7 @@ defencoding utf8
 encoding utf8 utf8
 
 # http://www.compensator.net/memo/2010/11/13/screen.html
-term xterm
+# term xterm
 
 # http://d.hatena.ne.jp/kanonji/20110413/1302674639
 defscrollback 10000
