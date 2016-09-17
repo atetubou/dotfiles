@@ -48,7 +48,6 @@ elif [[ -d ~/.emacs.d ]]; then
     ln -s ${PWD}/emacs.d ~/.emacs.d
 fi
 
-$(
-    cd ~/.emacs.d
-    cask install
-)
+cd ~/.emacs.d
+cask install
+
