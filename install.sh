@@ -10,6 +10,14 @@ function install_check () {
     fi
 }
 
+function add_path () {
+    path=$1
+    if ! fgrep $path ~/.bashrc ; then
+        echo $path >> ~/.bashrc
+        source ~/.bashrc
+    fi
+}
+
 install_check python
 install_check go
 install_check curl
@@ -22,32 +30,20 @@ git config --global user.name ${USER}
 git config --global user.email ${USER}@${HOSTNAME}
 git config --global push.default matching
 
-
-
-if [[ -f ~/.screenrc && ! -f ~/.screenrc.back ]]; then
-    mv ~/.screenrc ~/.screenrc.back
-fi
-
+rm -rf ~/.screenrc
 ln -s ${PWD}/screenrc ~/.screenrc
-
 
 curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 
-echo 'export PATH="${HOME}/.cask/bin:$PATH"' >> ~/.bashrc
-echo 'export GOPATH="${HOME}/.go"' >> ~/.bashrc
-echo 'export PATH="$GOPATH/bin:$PATH"' >> ~/.bashrc
-. ~/.bashrc
+add_path 'export PATH="${HOME}/.cask/bin:$PATH"'
+add_path 'export GOPATH="${HOME}/.go"'
+add_path 'export PATH="$GOPATH/bin:$PATH"'
+
 # goimports
 go get golang.org/x/tools/cmd/goimports
 
-if [[ ! -L ~/.emacs.d && ! -e ~/.emacs.d.back ]]; then
-    mv ~/.emacs.d ~/.emacs.d.back
-    ln -s ${PWD}/emacs.d ~/.emacs.d
-elif [[ -d ~/.emacs.d ]]; then
-    rm -rf ~/.emacs.d
-    ln -s ${PWD}/emacs.d ~/.emacs.d
-fi
+rm -rf ~/.emacs.d
+ln -s ${PWD}/emacs.d ~/.emacs.d
 
 cd ~/.emacs.d
 cask install
-
