@@ -37,9 +37,11 @@ if ! [[ -d ~/.cask ]]; then
 fi
 
 add_path 'export PATH="${HOME}/.cask/bin:$PATH"'
+export PATH="${HOME}/.cask/bin:$PATH"
 add_path 'export GOPATH="${HOME}/.go"'
+export GOPATH="${HOME}/.go"
 add_path 'export PATH="$GOPATH/bin:$PATH"'
-source ~/.bashrc
+export PATH="$GOPATH/bin:$PATH"
 
 # goimports
 go get golang.org/x/tools/cmd/goimports
