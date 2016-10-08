@@ -32,7 +32,9 @@ git config --global push.default matching
 rm -rf ~/.screenrc
 ln -s ${PWD}/screenrc ~/.screenrc
 
-curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+if ! [[ -d ~/.cask ]]; then
+    curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+fi
 
 add_path 'export PATH="${HOME}/.cask/bin:$PATH"'
 export PATH="${HOME}/.cask/bin:$PATH"

@@ -11,7 +11,7 @@
 (depends-on "expand-region")
 (depends-on "f")
 (depends-on "flycheck")
-(depends-on "flycheck-cask")
+# (depends-on "flycheck-cask")
 (depends-on "git-gutter")
 (depends-on "go-mode")
 (depends-on "htmlize")
