@@ -12,7 +12,7 @@ function install_check () {
 
 function add_path () {
     path="$1"
-    if ! fgrep "$path" ~/.bashrc ; then
+    if ! fgrep "$path" ~/.bashrc > /dev/null ; then
         echo "$path" >> ~/.bashrc
     fi
 }
@@ -37,11 +37,9 @@ if ! [[ -d ~/.cask ]]; then
 fi
 
 add_path 'export PATH="${HOME}/.cask/bin:$PATH"'
-export PATH="${HOME}/.cask/bin:$PATH"
 add_path 'export GOPATH="${HOME}/.go"'
-export GOPATH="${HOME}/.go"
 add_path 'export PATH="$GOPATH/bin:$PATH"'
-export PATH="$GOPATH/bin:$PATH"
+source ~/.bashrc
 
 # goimports
 go get golang.org/x/tools/cmd/goimports
