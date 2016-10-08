@@ -1,12 +1,18 @@
 # dotfiles
 
 ## Prerequire:
- - emacs
- - python
- - go
  - curl
+ - emacs
+ - git
+ - go
+ - python
+
+```
+$ sudo apt install curl emacs git golang python
+```
 
 ## Install:
 ```
-$ ./install.sh
+$ git clone https://github.com/atetubou/dotfiles.git
+$ ./dotofiles/install.sh
 ```
