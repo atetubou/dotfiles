@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-pushd $(dirname $0)
+cd $(dirname $0)
 
 function install_check () {
     package="$1"
@@ -47,8 +47,5 @@ go get golang.org/x/tools/cmd/goimports
 rm -rf ~/.emacs.d
 ln -s ${PWD}/emacs.d ~/.emacs.d
 
-pushd ~/.emacs.d
+cd ~/.emacs.d
 cask install
-popd
-
-popd
