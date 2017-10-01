@@ -8,29 +8,15 @@
 
 (show-paren-mode t)
 
-;;;====================================
-;;;; Buffer 設定
-;;;===================================
-;;; iswitchb は、バッファ名の一部の文字を入力することで、
-;;; 選択バッファの絞り込みを行う機能を実現します。
-;;; バッファ名を先頭から入力する必要はなく、とても使いやすくなります。
-(iswitchb-mode 1) ;;iswitchbモードON
-;;; C-f, C-b, C-n, C-p で候補を切り替えることができるように。
-(add-hook 'iswitchb-define-mode-map-hook
-      (lambda ()
-        (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
-        (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)
-        (define-key iswitchb-mode-map "\C-f" 'iswitchb-next-match)
-        (define-key iswitchb-mode-map "\C-b" 'iswitchb-prev-match)))
-
 
 ;;; 起動時の画面はいらない
 (setq inhibit-startup-message t)
 
-(ac-config-default)
+(add-hook 'after-init-hook 'global-company-mode)
 
-(yas-global-mode 1)
-
+(ido-mode t)
+(require 'ido)
+(icomplete-mode 1)
 
 (setq completion-ignore-case t)
 (global-auto-revert-mode 1)
@@ -69,9 +55,9 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ; (require 'google-c-style)
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c++-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+; (add-hook 'c-mode-common-hook 'google-set-c-style)
+; (add-hook 'c++-mode-common-hook 'google-set-c-style)
+; (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 
 (setq gofmt-command "goimports")
