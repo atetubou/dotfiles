@@ -38,10 +38,8 @@ fi
 
 add_path 'export PATH="${HOME}/.cask/bin:$PATH"'
 export PATH="${HOME}/.cask/bin:$PATH"
-add_path 'export GOPATH="${HOME}/.go"'
-export GOPATH="${HOME}/.go"
-add_path 'export PATH="$GOPATH/bin:$PATH"'
-export PATH="$GOPATH/bin:$PATH"
+add_path 'export PATH="$(go env GOPATH)/bin:$PATH"'
+export PATH="$(go env GOPATH)/bin:$PATH"
 
 # goimports
 go get golang.org/x/tools/cmd/goimports
