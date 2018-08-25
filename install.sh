@@ -29,9 +29,6 @@ git config --global user.name "${USER}"
 git config --global user.email "${USER}@${HOSTNAME}"
 git config --global push.default matching
 
-rm -rf ~/.screenrc
-ln -s ${PWD}/screenrc ~/.screenrc
-
 if ! [[ -d ~/.cask ]]; then
     curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 fi
@@ -43,6 +40,9 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 
 # goimports
 go get golang.org/x/tools/cmd/goimports
+
+# gocode
+go get -u github.com/mdempsky/gocode
 
 rm -rf ~/.emacs.d
 ln -s ${PWD}/emacs.d ~/.emacs.d
