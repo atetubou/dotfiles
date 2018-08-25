@@ -67,6 +67,7 @@
 (let ((envs '("PATH" "GOPATH")))
   (exec-path-from-shell-copy-envs envs))
 
+(add-hook 'go-mode-hook 'go-eldoc-setup)
 (add-hook 'go-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends) '(company-go))
