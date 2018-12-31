@@ -8,7 +8,7 @@
  - python
 
 ```
-$ sudo apt install curl emacs git golang python
+$ sudo apt -y install curl emacs git golang python
 ```
 
 ## tmux
