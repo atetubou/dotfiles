@@ -31,9 +31,12 @@
 
 ;;; package specific configurations
 (use-package company
+  :bind
+  (:map company-active-map
+		("C-n" . company-select-next)
+        ("C-p" . company-select-previous)
+		)
   :config
-  (define-key company-active-map (kbd "C-n") 'company-select-next)
-  (define-key company-active-map (kbd "C-p") 'company-select-previous)
   (global-company-mode)
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 2)
