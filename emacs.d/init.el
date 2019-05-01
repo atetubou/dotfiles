@@ -11,7 +11,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (use-package go-mode lsp-mode))))
+ '(package-selected-packages (quote (rainbow-delimiters use-package go-mode lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -20,11 +20,11 @@
  )
 
 ;;; global configurations
-(setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
-(keyboard-translate ?\C-h ?\C-?)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(keyboard-translate ?\C-h ?\C-?)
+(setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
 (setq default-tab-width 4)
-
+(show-paren-mode 1)
 
 ;;; package specific configurations
 (use-package go-mode
@@ -37,3 +37,8 @@
   ;;; can not install gopls to use bingo?
   (custom-set-variables `(lsp-clients-go-server-args `("--format-style=goimports")))
   (add-hook 'before-save-hook 'lsp-format-buffer))
+
+(use-package rainbow-delimiters-mode
+  :defer t
+  :init
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
