@@ -22,3 +22,4 @@
 ;;; global configurations
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
 (keyboard-translate ?\C-h ?\C-?)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
