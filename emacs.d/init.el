@@ -50,9 +50,12 @@
   :ensure t
   :init (global-flycheck-mode))
 
+(use-package flycheck-rust
+  :commands rust-mode
+  :defer t)
+
 (use-package go-mode
   :commands go-mode
-  :mode (("\\.go?\\'" . go-mode))
   :defer t
   :init
   (add-hook 'go-mode-hook #'lsp)
@@ -79,6 +82,15 @@
   :defer t
   :init
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
+(use-package rust-mode
+  :commands rust-mode
+  :defer t
+  :init
+  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+  (add-hook 'rust-mode-hook #'lsp)
+  :config
+  (add-hook 'before-save-hook 'lsp-format-buffer))
 
 ;;; for flycheck
 (provide 'init)
