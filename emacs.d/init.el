@@ -41,16 +41,17 @@
   (add-hook 'before-save-hook 'lsp-format-buffer))
 
 (use-package helm-config
-  :defer t
+  ;;; Should not have ":defer t".
   :bind
   (
    ("C-x C-f" . 'helm-find-files)
+   ("C-x b" . 'helm-mini)
    ("M-x" . 'helm-M-x)
    ("M-y" . 'helm-show-kill-ring)
    )
   :config
-  (helm-mode 1)
   (helm-autoresize-mode t)
+  (helm-mode 1)
 )
 
 (use-package rainbow-delimiters-mode
