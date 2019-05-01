@@ -32,8 +32,8 @@ git config --global push.default matching
 add_path 'export PATH="$(go env GOPATH)/bin:$PATH"'
 export PATH="$(go env GOPATH)/bin:$PATH"
 
-go get golang.org/x/tools/cmd/goimports
-go get -u https://github.com/saibing/bingo
+go get -u golang.org/x/tools/cmd/goimports
+go get -u github.com/saibing/bingo
 
 rm -rf ~/.emacs.d
 ln -s ${PWD}/emacs.d ~/.emacs.d
