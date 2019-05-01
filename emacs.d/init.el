@@ -11,7 +11,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (lsp-mode))))
+ '(package-selected-packages (quote (use-package go-mode lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -23,3 +23,17 @@
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
 (keyboard-translate ?\C-h ?\C-?)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
+
+;;; package specific configurations
+(use-package go-mode
+  :commands go-mode
+  :mode (("\\.go?\\'" . go-mode))
+  :defer t
+  :init
+  (add-hook 'go-mode-hook #'lsp)
+  :config
+  ;;; can not install gopls to use bingo?
+  (custom-set-variables `(lsp-clients-go-server-args `("--format-style=goimports")))
+  (add-hook 'before-save-hook 'lsp-format-buffer))
