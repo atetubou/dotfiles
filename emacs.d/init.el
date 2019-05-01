@@ -11,7 +11,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (rainbow-delimiters use-package go-mode lsp-mode))))
+ '(package-selected-packages
+   (quote
+	(helm rainbow-delimiters use-package go-mode lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -33,9 +35,9 @@
   :defer t
   :init
   (add-hook 'go-mode-hook #'lsp)
-  :config
   ;;; can not install gopls to use bingo?
-  (custom-set-variables `(lsp-clients-go-server-args `("--format-style=goimports")))
+  (setq lsp-clients-go-server-args `("--format-style=goimports"))
+  :config
   (add-hook 'before-save-hook 'lsp-format-buffer))
 
 (use-package rainbow-delimiters-mode
