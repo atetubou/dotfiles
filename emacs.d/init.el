@@ -44,6 +44,11 @@
   :config
   (add-hook 'before-save-hook 'lsp-format-buffer))
 
+(use-package helm
+  :defer t
+  :config
+  (helm-autoresize-mode t))
+
 (use-package helm-config
   ;;; Should not have ":defer t".
   :bind
@@ -54,7 +59,6 @@
    ("M-y" . 'helm-show-kill-ring)
    )
   :config
-  (helm-autoresize-mode t)
   (helm-mode 1)
 )
 
