@@ -29,12 +29,6 @@ git config --global user.name "${USER}"
 git config --global user.email "${USER}@${HOSTNAME}"
 git config --global push.default matching
 
-if ! [[ -d ~/.cask ]]; then
-    curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
-fi
-
-add_path 'export PATH="${HOME}/.cask/bin:$PATH"'
-export PATH="${HOME}/.cask/bin:$PATH"
 add_path 'export PATH="$(go env GOPATH)/bin:$PATH"'
 export PATH="$(go env GOPATH)/bin:$PATH"
 
@@ -46,6 +40,3 @@ go get -u github.com/mdempsky/gocode
 
 rm -rf ~/.emacs.d
 ln -s ${PWD}/emacs.d ~/.emacs.d
-
-cd ~/.emacs.d
-cask install
