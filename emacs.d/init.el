@@ -41,6 +41,7 @@
   (add-hook 'before-save-hook 'lsp-format-buffer))
 
 (use-package helm-config
+  :defer t
   :bind
   (
    ("C-x C-f" . 'helm-find-files)
