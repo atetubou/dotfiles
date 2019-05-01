@@ -13,7 +13,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(helm rainbow-delimiters use-package go-mode lsp-mode))))
+	(flycheck helm rainbow-delimiters use-package go-mode lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,6 +29,10 @@
 (show-paren-mode 1)
 
 ;;; package specific configurations
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
 (use-package go-mode
   :commands go-mode
   :mode (("\\.go?\\'" . go-mode))
