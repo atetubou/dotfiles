@@ -17,11 +17,11 @@ function add_path () {
     fi
 }
 
-install_check python
-install_check go
 install_check curl
-install_check git
 install_check emacs
+install_check git
+install_check go
+install_check python
 
 git config --global alias.st status
 git config --global alias.ci commit
@@ -32,11 +32,8 @@ git config --global push.default matching
 add_path 'export PATH="$(go env GOPATH)/bin:$PATH"'
 export PATH="$(go env GOPATH)/bin:$PATH"
 
-# goimports
 go get golang.org/x/tools/cmd/goimports
-
-# gocode
-go get -u github.com/mdempsky/gocode
+go get -u https://github.com/saibing/bingo
 
 rm -rf ~/.emacs.d
 ln -s ${PWD}/emacs.d ~/.emacs.d
