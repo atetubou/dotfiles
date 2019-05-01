@@ -66,3 +66,7 @@
   :defer t
   :init
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
+;;; for flycheck
+(provide 'init)
+;;; init.el ends here
