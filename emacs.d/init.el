@@ -40,6 +40,18 @@
   :config
   (add-hook 'before-save-hook 'lsp-format-buffer))
 
+(use-package helm-config
+  :bind
+  (
+   ("C-x C-f" . 'helm-find-files)
+   ("M-x" . 'helm-M-x)
+   ("M-y" . 'helm-show-kill-ring)
+   )
+  :config
+  (helm-mode 1)
+  (helm-autoresize-mode t)
+)
+
 (use-package rainbow-delimiters-mode
   :defer t
   :init
