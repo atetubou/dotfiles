@@ -13,7 +13,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(flycheck helm rainbow-delimiters use-package go-mode lsp-mode))))
+	(helm-company company-lsp company flycheck helm rainbow-delimiters use-package go-mode lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -29,6 +29,18 @@
 (show-paren-mode 1)
 
 ;;; package specific configurations
+(use-package company
+  :config
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous)
+  (global-company-mode)
+  (setq company-minimum-prefix-length 2)
+  (setq company-selection-wrap-around t)
+  (setq completion-ignore-case t)
+  (push 'company-lsp company-backends))
+
+(use-package company-lsp)
+
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
