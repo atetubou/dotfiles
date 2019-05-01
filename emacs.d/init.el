@@ -59,10 +59,9 @@
   :defer t
   :init
   (add-hook 'go-mode-hook #'lsp)
-  ;;; can not install gopls to use bingo?
-  (setq lsp-clients-go-server-args `("--format-style=goimports"))
+  (setq gofmt-command "goimports")
   :config
-  (add-hook 'before-save-hook 'lsp-format-buffer))
+  (add-hook 'before-save-hook 'gofmt-before-save))
 
 (use-package helm
   ;;; Should not have ":defer t".
