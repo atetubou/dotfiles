@@ -4,3 +4,4 @@ emacs.d/backup/
 emacs.d/elpa/
 emacs.d/recentf
 emacs.d/straight/
+emacs.d/transient/history.el
