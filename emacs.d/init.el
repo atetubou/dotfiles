@@ -70,6 +70,10 @@
   :commands rust-mode
   :defer t)
 
+(use-package git-gutter
+  :config
+  (global-git-gutter-mode +1))
+
 (use-package go-mode
   :commands go-mode
   :defer t
