@@ -97,8 +97,7 @@
   :config
   (add-hook 'c++-mode-hook #'lsp))
 
-(use-package magit
-  :defer t)
+(use-package magit)
 
 (use-package rainbow-delimiters
   :defer t
