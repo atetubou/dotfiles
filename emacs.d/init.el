@@ -20,6 +20,7 @@
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
 (setq default-tab-width 4)
 (show-paren-mode 1)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
