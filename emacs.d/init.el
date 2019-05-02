@@ -47,7 +47,6 @@
 (use-package company-lsp)
 
 (use-package flycheck
-  :ensure t
   :init (global-flycheck-mode))
 
 (use-package flycheck-rust
@@ -81,6 +80,9 @@
   :defer t
   :config
   (add-hook 'c++-mode-hook #'lsp))
+
+(use-package magit
+  :defer t)
 
 (use-package rainbow-delimiters
   :defer t
