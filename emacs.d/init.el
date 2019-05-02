@@ -94,7 +94,7 @@
 
 (use-package lsp-mode
   :defer t
-  :config
+  :init
   (add-hook 'c++-mode-hook #'lsp))
 
 (use-package magit)
