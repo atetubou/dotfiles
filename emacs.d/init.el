@@ -92,6 +92,7 @@
    ("C-x b" . 'helm-mini)
    ("M-x" . 'helm-M-x)
    ("M-y" . 'helm-show-kill-ring)
+   ("M-SPC" . 'helm-all-mark-rings)
    )
   :config
   (helm-autoresize-mode t)
