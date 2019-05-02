@@ -73,8 +73,7 @@
 
 (use-package git-gutter
   :config
-  (global-git-gutter-mode t)
-  (setq git-gutter:update-interval 5))
+  (global-git-gutter-mode t))
 
 (use-package go-mode
   :commands go-mode
