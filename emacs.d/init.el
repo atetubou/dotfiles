@@ -1,5 +1,21 @@
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+	("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
 ;;; global configurations
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(column-number-mode t)
 (keyboard-translate ?\C-h ?\C-?)
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
 (setq default-tab-width 4)
@@ -97,6 +113,11 @@
   (add-hook 'rust-mode-hook #'lsp)
   :config
   (add-hook 'before-save-hook 'lsp-format-buffer))
+
+(use-package smart-mode-line
+  :config
+  (setq sml/theme 'dark)
+  (sml/setup))
 
 ;;; for flycheck
 (provide 'init)
