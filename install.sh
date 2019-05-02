@@ -33,7 +33,7 @@ add_path 'export PATH="$(go env GOPATH)/bin:$PATH"'
 export PATH="$(go env GOPATH)/bin:$PATH"
 
 go get -u golang.org/x/tools/cmd/goimports
-go get -u github.com/saibing/bingo
+go get -u golang.org/x/tools/cmd/gopls
 
 rm -rf ~/.emacs.d
 ln -s ${PWD}/emacs.d ~/.emacs.d
