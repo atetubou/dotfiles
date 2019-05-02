@@ -77,6 +77,11 @@
   (helm-mode 1)
 )
 
+(use-package lsp-mode
+  :defer t
+  :config
+  (add-hook 'c++-mode-hook #'lsp))
+
 (use-package rainbow-delimiters
   :defer t
   :init
