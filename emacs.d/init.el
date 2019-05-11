@@ -49,6 +49,9 @@
 
 
 ;;; package specific configurations
+(use-package bazel-mode
+  :mode "\\(BUILD.*\\|WORKSPACE\\)\\'")
+
 (use-package company
   :bind
   (:map company-active-map
