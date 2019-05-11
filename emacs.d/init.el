@@ -129,6 +129,9 @@
   (setq sml/theme 'dark)
   (sml/setup))
 
+(use-package yaml-mode
+  :defer t)
+
 ;;; for flycheck
 (provide 'init)
 ;;; init.el ends here
