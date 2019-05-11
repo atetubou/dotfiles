@@ -21,6 +21,7 @@
 (keyboard-translate ?\C-h ?\C-?)
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
 (setq default-tab-width 4)
+(setq require-final-newline t)
 (show-paren-mode 1)
 
 (require 'package)
