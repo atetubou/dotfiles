@@ -24,6 +24,13 @@
 (setq require-final-newline t)
 (show-paren-mode 1)
 
+(add-hook 'python-mode-hook
+	  '(lambda()
+	     (setq indent-tabs-mode nil)
+	     (setq indent-level 4)
+	     (setq python-indent 4)))
+(add-to-list 'auto-mode-alist '("\\.star\\'" . python-mode))
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
