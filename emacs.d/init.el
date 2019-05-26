@@ -139,6 +139,10 @@
 (use-package yaml-mode
   :defer t)
 
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
+
 ;;; for flycheck
 (provide 'init)
 ;;; init.el ends here
