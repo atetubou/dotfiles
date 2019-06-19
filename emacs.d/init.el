@@ -136,6 +136,14 @@
   (setq sml/theme 'dark)
   (sml/setup))
 
+(use-package typescript-mode
+  :commands typescript-mode
+  :defer t
+  :init
+  (add-hook 'typescript-mode #'lsp)
+  :config
+  (add-hook 'before-save-hook 'lsp-format-buffer))
+
 (use-package yaml-mode
   :defer t)
 
