@@ -75,6 +75,8 @@
 
 (use-package company-lsp)
 
+(use-package dockerfile-mode)
+
 (use-package flycheck
   :init (global-flycheck-mode))
 
