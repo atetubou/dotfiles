@@ -20,7 +20,8 @@
 (global-set-key "\C-s" 'helm-occur)
 (keyboard-translate ?\C-h ?\C-?)
 (setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
-(setq default-tab-width 4)
+(setq-default indent-tabs-mode nil)
+(setq default-tab-width 2)
 (setq require-final-newline t)
 (show-paren-mode 1)
 
