@@ -132,7 +132,7 @@
   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
   (add-hook 'rust-mode-hook #'lsp)
   :config
-  (add-hook 'before-save-hook 'lsp-format-buffer))
+  (setq rust-format-on-save t))
 
 (use-package smart-mode-line
   :config
