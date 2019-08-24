@@ -118,6 +118,11 @@
   :init
   (add-hook 'c++-mode-hook #'lsp))
 
+(use-package lsp-ui
+  :defer t
+  :init
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
 (use-package magit)
 
 (use-package rainbow-delimiters
