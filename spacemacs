@@ -30,7 +30,10 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(go
+   '(
+     (go :variables
+         go-format-before-save t
+         gofmt-command "goimports")
      python
      (rust :variables
            rust-backend 'lsp)
