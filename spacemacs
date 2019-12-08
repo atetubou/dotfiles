@@ -37,7 +37,10 @@ This function should only modify configuration layer settings."
          gofmt-command "goimports")
      python
      (rust :variables
-           rust-backend 'lsp)
+           rust-backend 'lsp
+           rust-format-on-save t
+           )
+
      lsp
      shell
      ;; ----------------------------------------------------------------
@@ -83,8 +86,6 @@ This function should only modify configuration layer settings."
    ;; them if they become unused. `all' installs *all* packages supported by
    ;; Spacemacs and never uninstall them. (default is `used-only')
    dotspacemacs-install-packages 'used-only
-
-   rust-format-on-save t
 ))
 
 (defun dotspacemacs/init ()
