@@ -34,6 +34,7 @@ This function should only modify configuration layer settings."
    '(javascript
      ruby
      yaml
+     terraform
      (go :variables
          go-format-before-save t
          gofmt-command "goimports")
