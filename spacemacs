@@ -38,7 +38,9 @@ This function should only modify configuration layer settings."
      (go :variables
          go-format-before-save t
          gofmt-command "goimports")
-     python
+     (python :variables
+             python-indent-offset 2
+             )
      (rust :variables
            rust-backend 'lsp
            rust-format-on-save t
