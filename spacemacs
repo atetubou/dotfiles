@@ -45,7 +45,7 @@ This function should only modify configuration layer settings."
            rust-backend 'lsp
            rust-format-on-save t
            )
-
+     docker
      lsp
      shell
      ;; ----------------------------------------------------------------
