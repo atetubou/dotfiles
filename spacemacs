@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
            rust-format-on-save t
            )
      docker
+     typescript
      lsp
      shell
      ;; ----------------------------------------------------------------
