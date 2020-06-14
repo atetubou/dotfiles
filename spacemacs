@@ -47,7 +47,8 @@ This function should only modify configuration layer settings."
            )
      docker
      typescript
-     lsp
+     (lsp :variables
+          lsp-rust-server 'rust-analyzer)
      shell
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
