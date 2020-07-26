@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
              )
      (rust :variables
            rust-backend 'lsp
-           rust-format-on-save t
+           ;; rust-format-on-save t
            )
      docker
      typescript
