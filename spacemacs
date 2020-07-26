@@ -49,6 +49,8 @@ This function should only modify configuration layer settings."
      docker
      typescript
      (lsp :variables
+          ;; https://emacs-lsp.github.io/lsp-mode/page/settings/
+          lsp-enable-file-watchers nil
           lsp-rust-server 'rust-analyzer)
      shell
      ;; ----------------------------------------------------------------
