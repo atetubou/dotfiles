@@ -42,6 +42,8 @@ This function should only modify configuration layer settings."
          gofmt-command "goimports")
      (python :variables
              python-indent-offset 2
+             python-backend 'lsp
+             python-lsp-server 'pyright
              )
      (rust :variables
            rust-backend 'lsp
