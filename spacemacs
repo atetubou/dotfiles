@@ -474,6 +474,13 @@ you should place your code here."
 
   ;; https://www.spacemacs.org/doc/FAQ.html#prevent-the-visual-selection-overriding-my-system-clipboard
   (xterm-mouse-mode -1)
+
+  (with-eval-after-load 'git-link
+    (defun git-link-googlesource (hostname dirname filename branch commit start end)
+      (format "https://%s/%s/+/%s/%s#%s" hostname dirname (or commit branch) filename start))
+
+    (add-to-list 'git-link-remote-alist
+                 '("googlesource\\.com" git-link-googlesource)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
