@@ -481,6 +481,9 @@ you should place your code here."
 
     (add-to-list 'git-link-remote-alist
                  '("googlesource\\.com" git-link-googlesource)))
+
+  ;; https://stackoverflow.com/a/14033335
+  (define-coding-system-alias 'UTF-8 'utf-8)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
