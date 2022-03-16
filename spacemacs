@@ -488,7 +488,9 @@ you should place your code here."
 
   ;; https://stackoverflow.com/a/14033335
   (define-coding-system-alias 'UTF-8 'utf-8)
-  )
+
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
