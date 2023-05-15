@@ -13,7 +13,7 @@ sudo apt -y install curl emacs git golang python
 
 ## tmux
 ```
-wget https://raw.githubusercontent.com/atetubou/dotfiles/master/.tmux.conf -O ~/.tmux.conf
+wget https://raw.githubusercontent.com/atetubou/dotfiles/master/tmux.conf -O ~/.tmux.conf
 ```
 
 ## Install:
