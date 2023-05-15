@@ -35,7 +35,6 @@ This function should only modify configuration layer settings."
      html
      sql
      protobuf
-     haskell
      javascript
      ruby
      yaml
@@ -65,7 +64,9 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
+     (helm
+      ;; https://github.com/syl20bnr/spacemacs/issues/15419#issuecomment-1116079076
+      :variables helm-use-fuzzy 'source)
      auto-completion
      better-defaults
      emacs-lisp
